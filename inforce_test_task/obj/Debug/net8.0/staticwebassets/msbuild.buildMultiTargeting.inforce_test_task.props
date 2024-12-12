@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\inforce_test_task.props" />
+</Project>
