@@ -1,0 +1,20 @@
+<!-- short-urls.component.html -->
+<mat-card>
+    <mat-table [dataSource]="urls" class="mat-elevation-z8">
+      <ng-container matColumnDef="originalUrl">
+        <mat-header-cell *matHeaderCellDef> Original URL </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.originalUrl}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="shortCode">
+        <mat-header-cell *matHeaderCellDef> Short URL </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a [href]="'https://localhost:7124/' + element.shortCode" target="_blank">{{element.shortCode}}</a>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+  
